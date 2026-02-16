@@ -1,0 +1,13 @@
+#!/bin/sh
+
+echo "Running mypy..."
+. venv/Scripts/activate && mypy --strict --explicit-package-bases src/
+
+[ "$?" -ne 0 ] && exit 1
+
+len="$(cat "$1" | wc -c)"
+echo "len:$len msg:'$(cat "$1")'"
+
+[ "$len" -ge 50 ] && exit 1
+
+exit 0

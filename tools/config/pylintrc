@@ -1,0 +1,18 @@
+[MESSAGES CONTROL]
+enable=all
+
+disable=
+    too-few-public-methods,
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring,
+    missing-docstring
+
+[FORMAT]
+max-line-length = 120
+
+[DESIGN]
+max-attributes = 10
+max-args = 10
+max-positional-arguments = 10
+
