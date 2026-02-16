@@ -1,0 +1,22 @@
+[MASTER]
+fail-on=F,E,W,C,R,I
+
+[MESSAGES CONTROL]
+enable=all
+
+disable=
+    too-few-public-methods,
+    use-implicit-booleaness-not-comparison-to-zero,
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring,
+    missing-docstring
+
+[FORMAT]
+max-line-length = 120
+
+[DESIGN]
+max-attributes = 15
+max-args = 10
+max-positional-arguments = 10
+

@@ -1,0 +1,29 @@
+name: Base TickShock Workflow
+
+on:
+  workflow_call:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up runner env
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'poetry'
+
+      - name: Set up project
+        run: bash gangbox/tools/setup.sh
+
+      - name: Run tests
+        run: bash gangbox/tools/test.sh src
+
